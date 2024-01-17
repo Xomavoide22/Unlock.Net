@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -30,51 +31,35 @@
             font-size: 16px;
             width: calc(100% - 20px);
         }
-
-        .title {
-            text-align: center;
-            font-size: 24px;
-            margin-top: 20px;
-        }
-
-        .msg {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .credits {
-            color: gray;
-        }
-
-        .info {
-            color: lightblue;
-        }
     </style>
-    <title>Cool Website</title>
+    <title>Proxy Example</title>
 </head>
 <body>
-    <div class="title">Custom Webbrowser example</div>
+    <div class="title">Proxy Example</div>
     <center>
         <form id="consoleForm">
-            <input id="consoleInput" placeholder="Type anything">
+            <input id="consoleInput" placeholder="Type a website URL and press Enter">
         </form>
+        <div class="msg">Note: This example uses <a href="https://github.com/titaniumnetwork-dev/Ultraviolet">Ultraviolet</a></div>
+        <div class="msg credits">Made by <a href="https://github.com/Zaluea-Network">Zaluea Network</a></div>
+        <div class="msg info">You can delete this.</div>
     </center>
-    <script src="uv/uv.bundle.js" defer=""></script>
-    <script src="uv/uv.config.js" defer=""></script>
-    <script src="index.js" defer=""></script>
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <script src="index.js"></script>
     <div class="console" id="consoleOutput"></div>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('consoleForm');
-            const input = document.getElementById('consoleInput');
+        const consoleForm = document.getElementById('consoleForm');
+        const consoleInput = document.getElementById('consoleInput');
+        const consoleOutput = document.getElementById('consoleOutput');
 
-            form.addEventListener('submit', (event) => {
-                event.preventDefault();
-                const url = input.value.trim();
-                if (url !== '') window.location.href = url;
-            });
+        consoleForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const url = consoleInput.value.trim();
+            if (url !== '') {
+                window.location.href = url;
+            }
         });
     </script>
-
-
-</body></html>
+</body>
+</html>

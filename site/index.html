@@ -1,69 +1,68 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: 'Courier New', monospace;
-            background-color: black;
-            color: white;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
             margin: 0;
             padding: 0;
             overflow: hidden;
         }
 
-        .console {
-            position: absolute;
-            width: 100%;
-            bottom: 0;
-            padding: 10px;
-            box-sizing: border-box;
-        }
-
-        input {
-            background-color: transparent;
-            border: none;
-            outline: none;
-            color: white;
-            font-size: 16px;
-            width: calc(100% - 20px);
-        }
-
         .title {
             text-align: center;
-            font-size: 24px;
+            font-size: 28px;
+            margin-top: 40px;
+            color: #007bff;
+        }
+
+        .form-container {
+            text-align: center;
             margin-top: 20px;
         }
 
-        .msg {
+        input {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            outline: none;
+            color: #333;
+            font-size: 16px;
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        input::placeholder {
+            color: #aaa;
+        }
+
+        input:focus {
+            border-color: #007bff;
+        }
+
+        .console {
             text-align: center;
-            margin-top: 10px;
-        }
-
-        .credits {
-            color: gray;
-        }
-
-        .info {
-            color: lightblue;
+            margin-top: 20px;
+            color: #666;
         }
     </style>
     <title>Schoology</title>
 </head>
 <body>
-    <div class="title">Unblocked Browsing Free for Now</div>
-    <center>
+    <div class="title">Welcome to Unblocked Browsing</div>
+    <div class="form-container">
         <form id="consoleForm">
             <input id="consoleInput" placeholder="Enter URL to browse">
         </form>
-     
-    </center>
-    <script src="uv/uv.bundle.js" defer=""></script>
-    <script src="uv/uv.config.js" defer=""></script>
-    <script src="index.js" defer=""></script>
+    </div>
     <div class="console" id="consoleOutput"></div>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('consoleForm');
@@ -76,7 +75,5 @@
             });
         });
     </script>
-
-
-
-</body></html>
+</body>
+</html>
